@@ -258,6 +258,12 @@ var CMS = window.CMS || {};
                 that._reloadHelper();
             });
 
+            // attach events to paste
+            this.ui.container.on(this.click, '.cms-tree-item-preview a', function (e) {
+                CMS.settings.sideframe.url = '';
+                CMS.API.Helpers.setSettings(CMS.settings);
+            });
+
             // additional event handlers
             this._setFilter();
             this._setTooltips();

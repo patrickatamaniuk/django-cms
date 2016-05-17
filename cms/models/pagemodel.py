@@ -1011,12 +1011,12 @@ class Page(six.with_metaclass(PageMetaClass, MP_Node)):
         if not language:
             return _("Empty")
         title = self.title_cache[language]
-        if title.title:
-            return title.title
         if title.page_title:
             return title.page_title
         if title.menu_title:
             return title.menu_title
+        if title.title:
+            return title.title
         return title.slug
 
     def get_changed_date(self, language=None, fallback=True, version_id=None, force_reload=False):
